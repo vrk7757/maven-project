@@ -12,6 +12,9 @@ stage ('scm checkout')
   {steps { withMaven(jdk: 'locakjdk-1.8', maven: 'localmaven') {
     sh 'mvn package'
 }}}
+ 
   
+    stage ('docker image build')
+  {steps { sh 'docker build -t pkw0301/myadockercicd:01 .'}}
   
 }}
