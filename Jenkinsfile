@@ -18,11 +18,12 @@ stage ('scm checkout')
   {steps { sh 'docker build -t pkw0301/myadockercicd:01 .'}}
   
   
-  stage ('Push docker images to Docker hub') {
+  stage ('Push docker images to Docker hub') 
+  {steps{
   withCredentials([usernameColonPassword(credentialsId: 'DOCKERHUBID', variable: '')]) {
     sh 'docker login -u pkw0301 -p$DOCKERHUBID'
     sh 'docker push pkw0301/myadockercicd:01'
-}}
+  }}}
   
   
 }}
