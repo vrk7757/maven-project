@@ -11,10 +11,10 @@ pool:
 
 steps:
 - task: Maven@3
-  displayName: maven-install
+  displayName: maven-package
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'install'
+    goals: 'package'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
