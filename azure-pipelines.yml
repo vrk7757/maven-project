@@ -5,6 +5,8 @@
 
 trigger:
 - azure-pipelines
+- last-working-day
+- master
 
 pool:
   vmImage: 'ubuntu-latest'
