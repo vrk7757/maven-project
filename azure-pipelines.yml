@@ -46,6 +46,12 @@ stages:
 
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
+    
+    - task: PublishCodeCoverageResults@1
+      displayName: 'Publish Code Coverage'
+      inputs:
+        codeCoverageTool: 'JaCoCo'
+        summaryFileLocation: 
 
 - stage: Deploy
   displayName: Deploy stage
