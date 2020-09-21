@@ -51,7 +51,7 @@ stages:
       displayName: 'Publish Code Coverage'
       inputs:
         codeCoverageTool: 'JaCoCo'
-        summaryFileLocation: 
+        summaryFileLocation: '*/index.html'
 
 - stage: Deploy
   displayName: Deploy stage
