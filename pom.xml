@@ -51,6 +51,7 @@
                     <skip>${maven.test.skip}</skip>
                     <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
                     <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
+                    <outputDirectory> ${project.reporting.outputDirectory}/target</outputDirectory>
                     <output>file</output>
                     <append>true</append>
                     <excludes>
