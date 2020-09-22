@@ -39,9 +39,10 @@ stages:
         scannerMode: 'Other'
     
     - task: Maven@3
+      displayName: 'Build and sonar'
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'install'
+        goals: 'sonar:sonar install'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
