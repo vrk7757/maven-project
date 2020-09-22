@@ -39,7 +39,7 @@ stages:
         scannerMode: 'Other'
     
     - task: Maven@3
-      displayName: 'Build and sonar'
+      displayName: 'build'
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'sonar:sonar install'
@@ -51,10 +51,7 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
-        checkStyleRunAnalysis: true
-        pmdRunAnalysis: true
-        findBugsRunAnalysis: true
+        sqMavenPluginVersionChoice: 'pom'
  
 
 
