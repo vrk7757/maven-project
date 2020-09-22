@@ -41,7 +41,7 @@ stages:
     - task: Maven@3
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'clean sonar:sonar install'
+        goals: 'install'
         options: 'Dsonar.coverage.jacoco.xmlReportPaths=$(System.DefaultWorkingDirectory)\CCReport43F6D5EF\jacoco.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
