@@ -39,9 +39,21 @@ stages:
         scannerMode: 'Other'
     
     - task: Maven@3
-      displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'pom.xml'
+        goals: 'install'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        codeCoverageToolOption: 'JaCoCo'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: true
+        sqMavenPluginVersionChoice: 'latest'
+        checkStyleRunAnalysis: true
+        pmdRunAnalysis: true
+        findBugsRunAnalysis: true
  
 
 
