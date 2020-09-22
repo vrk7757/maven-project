@@ -42,7 +42,7 @@ stages:
       displayName: 'build'
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'sonar:sonar install'
+        goals: 'clean sonar:sonar install'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
