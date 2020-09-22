@@ -31,11 +31,25 @@ stages:
     
     steps:
     
+    - task: SonarCloudPrepare@1
+      displayName: 'Prepare Sonar Analysis'
+      inputs:
+        SonarCloud: 'ado-integration-for-prakash-org'
+        organization: 'mintuw-ado-org'
+        scannerMode: 'Other'
     
     - task: Maven@3
       displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'pom.xml'
+ 
+    - task: SonarCloudAnalyze@1
+      displayName: 'Run Code Analysis'
+    
+    - task: SonarCloudPublish@1
+      displayName: 'Publish Quality Gates Result'
+      inputs:
+        pollingTimeoutSec: '300'
 
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
