@@ -43,13 +43,7 @@ stages:
       inputs:
         mavenPomFile: 'pom.xml'
  
-    - task: SonarCloudAnalyze@1
-      displayName: 'Run Code Analysis'
-    
-    - task: SonarCloudPublish@1
-      displayName: 'Publish Quality Gates Result'
-      inputs:
-        pollingTimeoutSec: '300'
+
 
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
@@ -66,6 +60,14 @@ stages:
       inputs:
         codeCoverageTool: 'JaCoCo'
         summaryFileLocation: '**/target/*.xml'
+    
+    - task: SonarCloudAnalyze@1
+      displayName: 'Run Code Analysis'
+    
+    - task: SonarCloudPublish@1
+      displayName: 'Publish Quality Gates Result'
+      inputs:
+        pollingTimeoutSec: '300'
 
 - stage: Deploy
   displayName: Deploy stage
