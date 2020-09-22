@@ -42,7 +42,7 @@ stages:
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'install'
-        options: 'Dsonar.coverage.jacoco.xmlReportPaths=$(System.DefaultWorkingDirectory)\CCReport43F6D5EF\jacoco.xml'
+        options: '-Dsonar.coverage.jacoco.xmlReportPaths=//jacoco.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
