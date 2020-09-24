@@ -42,7 +42,7 @@ stages:
           # Put one key=value per line, example:
           # sonar.exclusions=**/*.bin
           sonar.projectname=prakashk0301.maven-project
-          sonar.projectkey=prakashk0301.maven-project
+          sonar.projectkey=keynew123456789
     
     - task: Maven@3
       inputs:
@@ -55,8 +55,7 @@ stages:
         mavenVersionOption: 'Default'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
-        sonarQubeRunAnalysis: true
-        sqMavenPluginVersionChoice: 'latest'
+        sonarQubeRunAnalysis: false
  
 
 
