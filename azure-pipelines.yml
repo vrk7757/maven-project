@@ -40,7 +40,7 @@ stages:
         extraProperties: |
           # Additional properties that will be passed to the scanner, 
           # Put one key=value per line, example:
-          # sonar.exclusions=**/*.bin
+          sonar.exclusions=**/*.bin
           sonar.projectname=prakashk0301.maven-project
           sonar.projectkey=keynew123456789
     
