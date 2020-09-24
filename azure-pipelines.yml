@@ -37,12 +37,17 @@ stages:
         SonarCloud: 'ado-integration-for-prakash-org'
         organization: 'mintuw-ado-org'
         scannerMode: 'Other'
+        extraProperties: |
+          # Additional properties that will be passed to the scanner, 
+          # Put one key=value per line, example:
+          # sonar.exclusions=**/*.bin
+          sonar.projectname=prakashk0301.maven-project
+          sonar.projectkey=prakashk0301.maven-project
     
     - task: Maven@3
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'install'
-        options: '-Dsonar.coverage.jacoco.xmlReportPaths=//jacoco.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         codeCoverageToolOption: 'JaCoCo'
