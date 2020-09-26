@@ -21,16 +21,16 @@
     <module>webapp</module>
   </modules>
 
-<repository>
-  <id>demopractice</id>
-  <url>https://pkgs.dev.azure.com/mintuwaikar/smarthotel-new-project/_packaging/demopractice/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>
+  <repository>
+    <id>demopractice</id>
+    <url>https://pkgs.dev.azure.com/mintuwaikar/smarthotel-new-project/_packaging/demopractice/maven/v1</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
 
   <build>
     <plugins>
