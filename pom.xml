@@ -21,13 +21,16 @@
     <module>webapp</module>
   </modules>
 
-  <distributionManagement>
-    <site>
-      <id>site-server</id>
-      <name>Test Project Site</name>
-      <url>file:///tmp/maven-project-site</url>
-    </site>
-  </distributionManagement>
+<repository>
+  <id>demopractice</id>
+  <url>https://pkgs.dev.azure.com/mintuwaikar/smarthotel-new-project/_packaging/demopractice/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
 
   <build>
     <plugins>
@@ -262,7 +265,6 @@
   </prerequisites>
 
 </project>
-
 
 
 
