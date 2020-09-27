@@ -37,6 +37,6 @@ steps {git branch: 'may-k8s-demo', url: 'https://github.com/prakashk0301/maven-p
   
   stage ('connect and deploy to k8s')
   {steps
-   {kubernetesDeploy configs: 'k8s-may-cicd.yml', kubeConfig: [path: ''], kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG_MAY', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']}}
+   {kubernetesDeploy configs: 'k8s-may-cicd.yml', deleteResource: true, kubeConfig: [path: '/var/lib/jenkins/workspace/may-k8s-cicd'], kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG_MAY', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']}
 
 }}
