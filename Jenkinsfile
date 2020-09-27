@@ -26,5 +26,13 @@ steps {git branch: 'may-k8s-demo', url: 'https://github.com/prakashk0301/maven-p
   
   }
   
+  stage ('docker push')
+  { 
+    steps {withCredentials([usernameColonPassword(credentialsId: 'dockerhubid', variable: '')]) {
+    sh 'docker push pkw0301/may-k8s-cicd:latest'
+}
+    }
+  }
+  
 
 }}
