@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: may-k8s-cicd
-labels:
-  batch: may
-  app: java
+  labels:
+    batch: may
+    app: java
 spec:
   replicas: 2
   selector: 
