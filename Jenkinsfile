@@ -37,6 +37,6 @@ steps {git branch: 'may-k8s-demo', url: 'https://github.com/prakashk0301/maven-p
   
   stage ('connect and deploy to k8s')
   {steps
-   {kubernetesDeploy configs: 'pod-nginx.yml', deleteResource: true, kubeConfig: [path: ''], kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG_MAY', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']}
+   {kubernetesDeploy configs: 'pod-nginx.yml', deleteResource: true, kubeConfig: [path: ''], kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG_N2', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']}
 
   }}}
