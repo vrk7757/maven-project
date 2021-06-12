@@ -9,7 +9,7 @@ pipeline {
     
         stage ('Compile Stage') {
             steps {
-                withMaven(jdk: 'localjdk-1.8', maven: 'localmaven') 
+                withMaven(jdk: 'jdk-1.8', maven: 'my_maven') 
                 {   
                     sh 'mvn compile' 
                 }
@@ -20,7 +20,7 @@ pipeline {
         
          stage ('Testing Stage') {
             steps {
-                withMaven(jdk: 'localjdk-1.8', maven: 'localmaven')
+                withMaven(jdk: 'jdk-1.8', maven: 'my_maven')
                 {
                     sh 'mvn test'
                 }
@@ -30,7 +30,7 @@ pipeline {
         
         stage ('install Stage') {
             steps {
-                withMaven(jdk: 'localjdk-1.8', maven: 'localmaven')
+                withMaven(jdk: 'jdk-1.8', maven: 'my_maven')
                 {
                     sh 'mvn install'
                 }                                 
