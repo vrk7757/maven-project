@@ -25,7 +25,7 @@ stage ('Run Docker build')
 
 stage ('Upload Docke image to Docker hUb')
 { steps { 
-withDockerRegistry(credentialsId: 'DockerHubAccount', url: 'https://index.docker.io/v1/') {
+withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
    sh 'docker push pkw0301/april_k8s-cicd:v1'
 }
 }
