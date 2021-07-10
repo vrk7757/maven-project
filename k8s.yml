@@ -1,38 +1,38 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: deployment-cicd
 spec:
   selector:
     matchLabels:         #should match with line 14
-      app: nginx
+      app: deployment-cicd
       date: 7-4-21
   replicas: 2 
   template:
     metadata:
       labels:
-        app: nginx       #should match with line 31
+        app: deployment-cicd       #should match with line 31
         date: 7-4-21
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: april_k8s-cicd
+        image: pkw0301/april_k8s-cicd:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: deployment-service
+  name: deployment-cicd
   labels:
-    svc: myservice
+    svc: deployment-cicd
 spec:
   selector:
-    app: nginx
+    app: deployment-cicd
     date: 7-4-21
   ports:
     - protocol: TCP
-      targetPort: 80
+      targetPort: 8080
       port: 80
   type:
     NodePort
