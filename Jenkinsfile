@@ -32,7 +32,7 @@ withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/
 }
  
  stage ('k8s-ci-cd')
- {steps { sh 'kubernetesDeploy configs: 'k8s.yml', kubeConfig: [path: ''], kubeconfigId: 'kubeadmin', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']'}}
+ {steps { sh "kubernetesDeploy configs: 'k8s.yml', kubeConfig: [path: ''], kubeconfigId: 'kubeadmin', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']"}}
 
 
 }}
