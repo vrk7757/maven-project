@@ -1,2 +1,3 @@
-FROM tomcat:8
-COPY target/*.war /usr/local/tomcat/webapps/
+FROM tomcat:latest
+MAINTAINER prakash
+COPY webapp/target/webapp.war /usr/local/tomcat/webapps
