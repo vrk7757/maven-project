@@ -8,5 +8,11 @@ pipeline
     stage('build the code')
     {steps {withMaven(jdk: 'java-home', maven: 'maven-home')}
       { sh 'mvn package'}}
+     stage('deploy to dev')
+    {steps
+     {
+     sshagent(['tomcat-pipeline'])
+     {sh 'scp -o StrictHostKeyChecking=no **/*.war ec2-user@172.31.41.47:/usr/share/tomcat/webapps'}}
 }
+}    
 }
