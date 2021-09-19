@@ -3,7 +3,7 @@ pipeline
     agent any
     stages
 {
-   stage(execute parallely)
+   stage('execute parallely')
     {
         parallel
     {
