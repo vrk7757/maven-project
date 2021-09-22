@@ -10,8 +10,11 @@ pipeline
     parallel
 {
     stage('build the code')
-    {steps{withMaven(jdk: 'java-home', maven: 'maven-home')
-               {sh 'mvn package'}}
+    
+    {steps
+     {withSonarQubeEnv(credentialsId: 'sonar')
+     {withMaven(jdk: 'java-home', maven: 'maven-home')
+      {sh 'mvn package sonar:sonar'}}}
     }
     stage('execute test cases')
     {steps {withMaven(jdk: 'java-home', maven: 'maven-home')
