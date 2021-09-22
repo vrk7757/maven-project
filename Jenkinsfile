@@ -15,7 +15,7 @@ pipeline
     }
     stage('execute test cases')
     {steps {withMaven(jdk: 'java-home', maven: 'maven-home')
-               {sh 'mvn package'}}
+               {sh 'mvn test'}}
     }
    
 }
