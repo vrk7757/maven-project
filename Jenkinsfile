@@ -5,14 +5,20 @@ pipeline
 {
     stage('scm chekout')
     { steps{git branch: 'master', url: 'https://github.com/vrk7757/maven-project.git'} }
-    
-    stage('build the code')
-    {steps {withMaven(jdk:'java-home', maven:'maven-home')
+     
+    stage('build the code & execute test cases')
+    {
+        parallel
+        {
+            stage('execute build')
+    {steps 
+     {withMaven(jdk:'java-home', maven:'maven-home')
            {sh 'mvn package'}}}
     
     stage('execute test cases')
     {steps {withMaven(jdk: 'java-home', maven: 'maven-home')
             {sh 'mvn test'}}}
     }
-   
+    }
+}
 }
