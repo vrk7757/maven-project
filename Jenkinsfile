@@ -11,10 +11,10 @@ pipeline
 {
     stage('build the code')
     
-    {steps
-     {withSonarQubeEnv(credentialsId:'sonar',installationName:'sonar')
+     {steps
+     
      {withMaven(jdk:'java-home', maven:'maven-home')
-      {sh 'mvn package sonar:sonar'}}}
+      {sh 'mvn package'}}}
     }
     stage('execute test cases')
     {steps {withMaven(jdk: 'java-home', maven: 'maven-home')
