@@ -4,7 +4,7 @@ pipeline
     stages
 {
     stage('scm chekout')
-    { steps{git branch: 'master', url: 'https://github.com/vrk7757/maven-project.git'} }
+    {steps{git branch: 'master', url: 'https://github.com/vrk7757/maven-project.git'} }
      
     stage('build the code & execute test cases')
     {
