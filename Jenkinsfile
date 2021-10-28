@@ -29,4 +29,3 @@ withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1')
         {sh 'docker push vrk757/dockerci-cd:01'}}}
 }
 }
-}
