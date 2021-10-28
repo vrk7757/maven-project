@@ -20,5 +20,7 @@ pipeline
             {sh 'mvn test'}}}
     }
     }
+    stage('docker build and create docker image')
+    {steps{sh 'docker build -t vrk7757/dockercicd:01 .'}}
 }
 }
