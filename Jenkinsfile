@@ -22,5 +22,11 @@ pipeline
     }
     stage('docker build and create docker image')
     {steps{sh 'docker build -t vrk7757/dockercicd:01 .'}}
+    
+    stage('dockerpush')
+    {steps{// This step should not normally be used in your script. Consult the inline help for details.
+withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1') 
+        {sh 'docker push vrk757/dockerci-cd:01'}}}
+}
 }
 }
