@@ -23,7 +23,7 @@ stage('approve qa deployement')
   steps
  {input 'approve or abort'}
 }
-stege('deploy to qa')
+stage('deploy to qa')
 { 
   steps
  {sh 'echo deply to qa'}
