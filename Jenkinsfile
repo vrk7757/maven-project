@@ -8,7 +8,7 @@ stage('scm checkout')
   steps
  {sh 'echo download the code'}
 }
-stage{'build the code')
+stage('build the code')
 { 
   steps
  {sh 'echo code is building'}
