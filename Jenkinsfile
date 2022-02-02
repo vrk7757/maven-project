@@ -14,10 +14,6 @@ stage('build the code')
  {steps
  {withMaven(globalMavenSettingsConfig: 'null', jdk: 'my-jdk', maven: 'my-mvn', mavenSettingsConfig: 'null')}
    {sh 'mvn test'}}
- stage('deploy to tomcat')
- {steps
-  {sshagent(['tomcat']) 
-  { sh 'scp -o StrictHostKeyChecking=no src=*/target/*.war dest=ec2-user@172.31.28.106:/usr/share/tomcat/webapps'}}
-} 
+
 }
 }
