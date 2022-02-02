@@ -10,7 +10,7 @@ stage('build the code')
 stage('deploy to dev env')
 {steps{sh 'echo deploying to dev'}}
 stage('approve qa deployement')
-{steps{input 'approve or abort'}}
+{steps{'input 'proceed or abort'}}
 stage('deploy to qa')
 {steps{sh 'echo deply to qa'}}
 }
