@@ -3,21 +3,21 @@ pipeline
 agent any
 stages
 {
+ stage('parllel execution')
+ {
+  parallel
+  {
 stage('scm checkout')
-{steps
+ {steps
 {git branch: 'master', url: 'https://github.com/vrk7757/maven-project.git'}}
-stage('build the code')
-{steps
- {withMaven(globalMavenSettingsConfig: 'null', jdk: 'my-jdk', maven: 'my-mvn', mavenSettingsConfig: 'null')}
- {sh 'mvn package'}}
- stage('test the code')
+stage('test the code')
  {steps
  {withMaven(globalMavenSettingsConfig: 'null', jdk: 'my-jdk', maven: 'my-mvn', mavenSettingsConfig: 'null')}
    {sh 'mvn test'}}
- stage('deploy to dev')
- {steps
-  {sshagent(['tomcat'])
-  {sh 'scp -o StrictHostKeyChecking=no src=*/target/*.war dest=ec2-user@172.31.9.38:/usr/share/tomcat/webapps'}}
 }
+}
+ stege('test the code')
+ {steps
+  {sh 'echo test code'}}
 }
 }
