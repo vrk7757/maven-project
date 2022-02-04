@@ -16,7 +16,7 @@ stage('test the code')
    {sh 'mvn test'}}
 }
 }
- stege('test the code')
+ stage('test the code')
  {steps
   {sh 'echo test code'}}
 }
