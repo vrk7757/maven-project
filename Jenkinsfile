@@ -25,4 +25,3 @@ stage('test the code')
 }
 }
 }
-}
