@@ -18,6 +18,8 @@ stage('test the code')
 }
  stage('test the code')
  {steps
-  {sh 'echo test code'}}
+  {withSonarQubeEnv(credentialsId: 'sonar', installation name:'sonar')
+   { sh 'sonar=sonar}}
+   }
 }
 }
