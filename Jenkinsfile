@@ -18,8 +18,8 @@ stage('test the code')
 }
  stage('test the code')
  {steps
-  {withSonarQubeEnv(credentialsId: 'sonar', installation name:'sonar')
-   { sh 'sonar=sonar}}
+  {withSonarQubeEnv(credentialsId: 'sonar',installationName:'sonar')
+   { sh'sonar=sonar}}
    }
 }
 }
