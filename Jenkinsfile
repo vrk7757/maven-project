@@ -18,8 +18,11 @@ stage('test the code')
 }
  stage('test the code')
  {steps
-  {withSonarQubeEnv(credentialsId: 'sonar',installationName:'sonar')
-   { sh'sonar=sonar'}}
+  {withMaven(globalMavenSettingsConfig: 'null', jdk: 'my-jdk', maven: 'my-mvn', mavenSettingsConfig: 'null')
+   {withSonarQubeEnv(credentialsId: 'sonar',installationName:'sonar')
+   { sh'mvn package sonar=sonar'}}
    }
+}
+}
 }
 }
