@@ -16,15 +16,14 @@ stage('test the code')
    {sh 'mvn test'}}
 }
 }
-  stage('build code')
- {steps
-  {withMaven(jdk: 'my-jdk', maven: 'my-mvn')
-   {sh'mvn package'}}}
- 
  stage('test the code')
  {steps
  {withSonarQubeEnv(credentialsId: 'sonar',installationName:'sonar')
-    {sh 'sonar=sonar'}}
-   }
+  {sh 'sonar=sonar'}}}
+ 
+ stage('build code')
+ {steps
+  {withMaven(jdk: 'my-jdk', maven: 'my-mvn')
+   {sh'mvn package'}}}
 }
 }
