@@ -26,6 +26,6 @@ stage('docker stage')
  stage('docker push')
  {staps {// This step should not normally be used in your script. Consult the inline help for details.
    withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') 
-  {sh 'docker push vrk7757/docker-cicd:v5}}}
+  {sh 'docker push vrk7757/docker-cicd:v5'}}}
 }
 }
